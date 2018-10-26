@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>관종자가진단</title>
+	<script src="https://use.typekit.net/dcf1ame.js"></script>
+	<script>
+		try{Typekit.load({ async: true });}catch(e){}
+		:: -webkit-scrollbar-track {background-color: #19cec9;}
+			
+	</script>
+	<style type="text/css">
+		@import url(http://fonts.googleapis.com/earlyaccess/notosanskr.css);
+
+		body{
+			background-color:black;
+			background-size: cover;}
+
+		section{
+			overflow: hidden;
+		}
+
+#test11{ cursor:pointer; }
+		.test {
+			position: relative;
+			margin: auto;
+			left: calc(50% - 475px);
+			border : 1px solid;
+			border-color: white;
+			text-align: center;
+			float: left;
+			width:950px; 
+			height: 80px;
+		}
+
+		#box{width:1000px;
+			height: 320px;
+			
+			display: block;
+			position: absolute; 
+			margin: auto;
+			left:calc(50% - 500px); 
+			top: calc(50% - 160px);
+			}
+
+		#testPopup1 {
+			width:500px; 
+			height:400px; 
+			background: #8402A1; 
+			display: none;
+			position: absolute; 
+			margin:auto; 
+			left:calc(50% - 250px); 
+			top:100px;
+			z-index: 5;
+			overflow:scroll;
+			overflow-x: hidden;
+
+
+		}
+
+		#popup{
+			padding: 1em;
+			width:650px;
+			height:400px;
+			background: #19CEC9;
+			display: none;
+			margin: auto;
+			position: absolute;
+			left:5%;
+			top: 30%;
+			z-index: 6;
+			
+		}
+		
+		form .likert li {
+
+		display:inline-block;
+	  width:19%;
+	  text-align: center;
+	  vertical-align: top;
+
+	}
+		.q1 {
+			
+		display:block;
+		  position:relative;
+		  top:-10px;
+		  left:50%;
+		  margin-left:-6px;	 
+		}
+		 .likert {
+		 	
+			list-style:none;
+			padding:0 0 35px;
+			display:block;
+			}
+
+ 		.likert li input{		
+			display:block;
+		  	position:relative;
+		  	top:-10px;
+		  	left:50%;
+		  	margin-left:-6px;	 
+			}
+		.statement{
+			color: white;
+			font-weight: 700; 
+			font-size: 1.5em;
+			font-family: 'Noto Sans KR', sans-serif;
+		}
+		label{
+			color: white;
+			font-weight: 400; 
+			font-family: 'Noto Sans KR', sans-serif;
+
+		}
+
+		h2{ margin-right: 2em;
+			margin-left: 2em;
+			font-size: 1.7em;
+			font-family: 'source-han-serif-korean', serif; 
+			font-weight: 800; 
+			color: white;
+			float: left;
+			}
+
+		h3{ margin-left: 2em;
+			font-size: 1.3em;
+			font-family: 'source-han-serif-korean', serif; 
+			font-weight: 800;
+			color: white;}
+
+		#name{ margin-left: 2em;
+			font-size: 1.3em;
+			font-family: 'source-han-serif-korean', serif; 
+			font-weight: 800;
+			color: black;}
+
+		p{font-size: 1.3em;
+			font-family: 'source-han-serif-korean', serif; 
+			font-weight: 800;
+			color: black;
+			float: left;
+		}
+
+		.test p{font-size: 1.3em;
+			font-family: 'source-han-serif-korean', serif; 
+			font-weight: 800;
+			color: white;
+			float: left;
+		}
+		h4{text-align: right;
+			color: black;
+			font-weight: 500;
+			font-size: 1em;
+			font-family: 'Noto Sans KR', sans-serif;
+
+		}
+
+		#exit
+		{	text-align: right;
+			color: black;
+			font-size: 3em;
+		font-family: 'Noto Sans KR', sans-serif;
+		font-weight: 800;}
+
+
+		
+
+	</style>
+</head>
+<body>
+	<section>
+		<h3> ※진단하고 싶은 유형을 골라 테스트를 진행해보세요.</h3>
+		<div id="box">
+			<div class="test" id="test11">
+				<h2 id="test1">Test 1. 허언증 형</h2>
+				<p>수시로 거짓말을 하고 그 거짓말이 진실이라고 믿는다.</p>
+			</div>
+		
+			<div class="test">
+				<h2>Test 2. 트롤 형</h2>
+				<p>평화를 참지 못하고 분탕을 치고 개싸움이 나는 것을 보는 게 좋다.</p>
+			</div>
+			<div class="test">
+				<h2>Test 3. 넌씨눈 형</h2>
+				<p>눈치없다는 소리를 자주 듣고 대화의 흐름을 따라가지 못한다.</p>
+			</div>
+			<div class="test">
+				<h2>Test 4. 관종 형</h2>
+				<p>SNS의 좋아요, 하트 등이 신경쓰이고 관심 받는 일이 즐겁다.</p>
+			</div>
+		</div>
+
+		<div id="testPopup1">
+			<form action="">
+			    <label class="statement">1. 나는 평소에 눈치 없다는 소리를 종종 듣는다.</label>
+			    <ul class='likert'>
+			      <li>
+			        <input type="radio" name="likert" value="5" id="yes1" class="q1">
+			        <label for="yes1">아주 그렇다</label>
+			      </li>
+			      <li>
+			        <input type="radio" name="likert" value="4" id="yes2" class="q1">
+			        <label for="yes2">그렇다</label>
+			      </li>
+			      <li>
+			        <input type="radio" name="likert" value="3" id="idk" class="q1">
+			        <label for="idk">잘 모르겠다</label>
+			      </li>
+			      <li>
+			        <input type="radio" name="likert" value="2" id="nope1" class="q1">
+			        <label for="nope1">그렇지않다</label>
+			      </li>
+			      <li>
+			        <input type="radio" name="likert" value="1" id="nope2" class="q1">
+			        <label for="nope2">절대 그렇지않다</label>
+			      </li>
+			    </ul>
+			</form>
+
+			<form action="">
+			    <label class="statement">2. 나는 어떤 때와 장소에서든 내 의견을 말할 수 있다.</label>
+			    <ul class='likert'>
+			      <li>
+			        <input type="radio" name="likert" value="5" id="qy1" class="q2">
+			        <label for="qy1">아주 그렇다</label>
+			      </li>
+			      <li>
+			        <input type="radio" name="likert" value="4" id="qy2" class="q2">
+			        <label for="qy2">그렇다</label>
+			      </li>
+			      <li>
+			        <input type="radio" name="likert" value="3" id="qidk2" class="q2">
+			        <label for="qidk2">잘 모르겠다</label>
+			      </li>
+			      <li>
+			        <input type="radio" name="likert" value="2" id="qn1" class="q2">
+			        <label for="qn1">그렇지않다</label>
+			      </li>
+			      <li>
+			        <input type="radio" name="likert" value="1" id="qn2" class="q2">
+			        <label for="qn2">절대 그렇지않다</label>
+			      </li>
+			    </ul>
+			</form>
+
+			<form action="">
+			    <label class="statement">3. 나는 내 주변에서 무슨 일이 일어나든 간에 관심이 없다.</label>
+			    <ul class='likert'>
+			      <li>
+			        <input type="radio" name="likert" value="5" id="yes1" class="q3">
+			        <label for="yes1">아주 그렇다</label>
+			      </li>
+			      <li>
+			        <input type="radio" name="likert" value="4" id="yes2" class="q3">
+			        <label for="yes2">그렇다</label>
+			      </li>
+			      <li>
+			        <input type="radio" name="likert" value="3" id="idk" class="q3">
+			        <label for="idk">잘 모르겠다</label>
+			      </li>
+			      <li>
+			        <input type="radio" name="likert" value="2" id="nope1" class="q3">
+			        <label for="nope1">그렇지않다</label>
+			      </li>
+			      <li>
+			        <input type="radio" name="likert" value="1" id="nope2" class="q3">
+			        <label for="nope2">절대 그렇지않다</label>
+			      </li>
+			    </ul>
+			</form>
+
+			<form action="">
+			    <label class="statement">4. 나는 변화에 둔감한 편이다.</label>
+			    <ul class='likert'>
+			      <li>
+			        <input type="radio" name="likert" value="5" id="yes1" class="q4">
+			        <label for="yes1">아주 그렇다</label>
+			      </li>
+			      <li>
+			        <input type="radio" name="likert" value="4" id="yes2" class="q4">
+			        <label for="yes2">그렇다</label>
+			      </li>
+			      <li>
+			        <input type="radio" name="likert" value="3" id="idk" class="q4">
+			        <label for="idk">잘 모르겠다</label>
+			      </li>
+			      <li>
+			        <input type="radio" name="likert" value="2" id="nope1" class="q4">
+			        <label for="nope1">그렇지않다</label>
+			      </li>
+			      <li>
+			        <input type="radio" name="likert" value="1" id="nope2" class="q4">
+			        <label for="nope2">절대 그렇지않다</label>
+			      </li>
+			    </ul>
+			</form>
+
+			<form action="">
+			    <label class="statement">5. 나는 다른 사람의 말에 틀린 것이 있으면 사소한 것이라도 고쳐주려고 한다.</label>
+			    <ul class='likert'>
+			      <li>
+			        <input type="radio" name="likert" value="5" id="yes1" class="q5">
+			        <label for="yes1">아주 그렇다</label>
+			      </li>
+			      <li>
+			        <input type="radio" name="likert" value="4" id="yes2" class="q5">
+			        <label for="yes2">그렇다</label>
+			      </li>
+			      <li>
+			        <input type="radio" name="likert" value="3" id="idk" class="q5">
+			        <label for="idk">잘 모르겠다</label>
+			      </li>
+			      <li>
+			        <input type="radio" name="likert" value="2" id="nope1" class="q5">
+			        <label for="nope1">그렇지않다</label>
+			      </li>
+			      <li>
+			        <input type="radio" name="likert" value="1" id="nope2" class="q5">
+			        <label for="nope2">절대 그렇지않다</label>
+			      </li>
+			    </ul>
+			</form>
+			<button id="totalButton">결과보기</button>
+			<button id="action2">계산</button>
+		</div>
+
+		<div id="popup">
+			<h3 id="name"><h3>
+				<p id="resultDiv"></p>
+				<h4> 가상병동 Cyber Hospital </h4>
+				<h3 id="exit">X</h3>
+		</div>
+
+	</section>
+	<script type="text/javascript">
+
+		var res = decodeURI(location.href);
+		var t = res.split("=");
+		var userName = t[1];
+		document.getElementById('name').innerHTML="[" + userName + "]" + "님의 결과값을 보여드립니다.";
+		
+		
+		
+function showPopup() {
+			testPopup1.style.display = "block"; 
+	  	}
+	  	test11.onclick = function showPopup() {
+			testPopup1.style.display = "block"; 
+	  	}
+
+	var total = 0;
+	action2.onclick = function(){ calculate(); }
+	function calculate(){
+
+		var t = document.getElementsByClassName("q1");
+		for(var i=0; i < t.length; i++){
+			console.log(t[i], t[i].checked);
+			if(t[i].checked == true){
+				total += parseInt(t[i].value);
+			}
+		}
+
+		var x = document.getElementsByClassName("q2");
+		for(var i=0; i < x.length; i++){
+			console.log(x[i], x[i].checked);
+			if(x[i].checked == true){
+				total += parseInt(t[i].value);
+			}
+		}
+
+		var y = document.getElementsByClassName("q3");
+		for(var i=0; i < y.length; i++){
+			console.log(y[i], y[i].checked);
+			if(y[i].checked == true){
+				total += parseInt(y[i].value);
+			}
+		}
+
+		var z = document.getElementsByClassName("q4");
+		for(var i=0; i < t.length; i++){
+			console.log(z[i], z[i].checked);
+			if(z[i].checked == true){
+				total += parseInt(z[i].value);
+			}
+		}
+
+		var b = document.getElementsByClassName("q5");
+		for(var i=0; i < b.length; i++){
+			console.log(b[i], b[i].checked);
+			if(b[i].checked == true){
+				total += parseInt(b[i].value);
+			}
+		}
+
+		
+
+		console.log("총" + total + "점입니다." );	
+	}
+
+	totalButton.onclick = function(){	
+		var text;
+		if(total < 10){ 
+			text = "진단 결과 당신은 [넌씨눈]에 해당하지 않습니다. 앞으로도 이렇게 생활하신다면 큰 이상은 없을 것으로 판단됩니다.";
+		}else if(total < 15){
+			text = "진단 결과 당신은 [넌씨눈]에 해당할 수도 있습니다. 조금 더 주변을 살피고 적응해보려고 노력하는 것을 권유합니다. ";
+		}else if(total < 20){
+			text = "진단 결과 당신은 [넌씨눈] 초기증상입니다. 당신은 주변 환경이나 대화의 분위기를 읽는 것을 종종 힘들어 하거나, 아예 무신경하다고 판단됩니다. 시간적으로 여유가 되신다면 가상병동을 통해 제대로 된 처방을 받아보시기를 권장합니다. ";
+		}else {
+			text = "진단 결과 당신은 [넌씨눈] 위험군에 해당합니다. 당신은 주변 환경이나 대화의 분위기를 거의 읽지 못하는 상태로 판단되며, 치료가 시급하니 빠른 시일내로 내원하실 것을 권장합니다.";
+		}
+
+		resultDiv.innerHTML = text;
+		popup.style.display = "block";
+	}
+
+	exit.onclick= function(){
+		popup.style.display = "none";
+		testPopup1.style.display = "none";
+	}
+
+		
+	</script>
+</body>
+</html>
